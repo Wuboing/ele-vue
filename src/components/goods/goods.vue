@@ -30,7 +30,8 @@
             return{
                 goods: {},
                 oneprice: 0,
-                selectedFood: {}
+                selectedFood: {},
+                money:0,
             }
         },
         mounted() {
@@ -41,10 +42,11 @@
         },
         methods:{
             childNotify (params) {
-                console.log('支付金额',params)
+                this.money += params
+                console.log('支付金额',this.money)
             }，
             playmo (){
-                alert('支付')
+                alert('支付'+ this.money)
             }
         }
     }
