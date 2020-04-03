@@ -42,13 +42,8 @@
             priceAdd(index){
                 this.allprice = this.count * this.item[index].price
                 console.log('单个金额'+this.allprice)
-                this.allplan()
+                this.$emit('childNotify', this.allprice)
             },
-            allplan(){
-                this.total =0
-                this.total += this.allprice
-                console.log(this.total)
-            }
         }
     }
 </script>
