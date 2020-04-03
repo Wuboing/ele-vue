@@ -9,7 +9,7 @@
                             <img :src="list.image">
                             <p>{{list.name}}</p>
                             <p>{{list.price}}元</p>
-                            <detail :item="good.foods" :index="index"></detail>
+                            <detail :item="good.foods" :index="index" @childNotify="childNotify"></detail>
                         </div>
                     </li>
                 </ul>
@@ -40,6 +40,9 @@
             })
         },
         methods:{
+            childNotify (params) {
+                console.log('支付金额',params)
+            }，
             playmo (){
                 alert('支付')
             }
